@@ -1,0 +1,15 @@
+.post__button {
+    background-color: #f8c3c9;
+    border: 3px solid #e63946;
+    color: #e63946;
+    border-radius: 5px;
+    height: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.post__button:hover {
+    background-color: #e63946;
+    color: white;
+}

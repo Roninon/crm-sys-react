@@ -1,15 +1,15 @@
 import React from 'react';
+import AppButton from './UI/button/AppButton';
 
-function PostItem() {
+const PostItem = (props) => {
+    console.log(props);
     return (
         <div className='post'>
             <div className="post__content">
-                <strong>1. Название мартшрута</strong>
-                <p>Описание</p>
+                <strong>{props.id}. {props.title}</strong>
+                <p>{props.body}</p>
             </div>
-            <div>
-                <button className="post__button">Удалить</button>
-            </div>
+            <AppButton name={'Удалить'}/>
 
         </div>
     );
