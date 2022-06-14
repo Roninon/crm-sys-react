@@ -1,18 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Counter = function() {
-
-    const [count, setCount] = useState(0)
-    const [value, setValue] = useState('')
-    
-    function increment() {
-        setCount(count + 1)
-    }
-
-    function decrement() {
-        setCount(count - 1)
-    }
-
+function PostItem() {
     return (
         <div className='post'>
             <div className="post__content">
@@ -22,9 +10,9 @@ const Counter = function() {
             <div>
                 <button className="post__button">Удалить</button>
             </div>
-            
+
         </div>
-    )
+    );
 }
 
-export default Counter;
+export default PostItem;
