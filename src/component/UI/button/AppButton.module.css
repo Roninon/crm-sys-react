@@ -1,9 +1,10 @@
 .post__button {
     background-color: #f8c3c9;
     border: 3px solid #e63946;
-    color: #e63946;
     border-radius: 5px;
-    height: 25px;
+    color: #e63946;
+    font-weight: 600;
+    height: 32px;
     padding: 0 10px;
     cursor: pointer;
     transition: .3s;

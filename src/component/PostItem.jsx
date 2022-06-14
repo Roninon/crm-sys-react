@@ -9,7 +9,7 @@ const PostItem = (props) => {
                 <strong>{props.id}. {props.title}</strong>
                 <p>{props.body}</p>
             </div>
-            <AppButton name={'Удалить'}/>
+            <AppButton img={'delete_forever'} name={'Удалить'}/>
 
         </div>
     );
