@@ -43,5 +43,5 @@
 
 .post:hover {
     box-shadow: 5px 5px 15px #1d3557;
-    border: 1px dashed;
+    /* border: 1px dashed; */
 }

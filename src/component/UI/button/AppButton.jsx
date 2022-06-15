@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './AppButton.module.css';
 
-function AppButton({ ...props }) {
+function AppButton({children, ...props}) {
     return (
         <div>
-            <button className={classes.post__button}>
-                {props.name}
+            <button {...props} className={classes.post__button}>
+                {children}
             </button>
         </div>
     );
