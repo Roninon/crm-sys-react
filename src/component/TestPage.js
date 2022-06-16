@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Менеджеры', 'Базы данных'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Профиль', 'Настройки', 'Статистика', 'Выход'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,7 +36,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -49,9 +49,10 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'Arial',
-              fontWeight: 600,
+              fontWeight: 500,
               color: 'inherit',
               textDecoration: 'none',
+              cursor: 'pointer',
             }}
           >
             Главная
@@ -103,14 +104,14 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontFamily: 'Arial',
+              fontWeight: 500,
               color: 'inherit',
               textDecoration: 'none',
+              cursor: 'pointer',
             }}
           >
-            LOGO
+            Главная
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
