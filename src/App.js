@@ -4,10 +4,11 @@ import PostList from './component/PostList'
 import AppButton from './component/UI/button/AppButton';
 import AppInput from './component/UI/input/AppInput';
 import TestCard from './component/TestCard';
+import getUsersFromApi from './api/api'
 import Container from '@mui/material/Container';
 import {Grid} from '@mui/material';
 import './styles/App.css'
-import getUsersFromApi from './api/api'
+
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [showDialog, setDialog] = useState(false);
 
     const addNewRoute = (e) => {
         e.preventDefault();
