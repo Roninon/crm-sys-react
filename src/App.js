@@ -37,7 +37,6 @@ function App() {
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [showDialog, setDialog] = useState(false);
 
     const addNewRoute = (e) => {
         e.preventDefault();
