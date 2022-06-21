@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import TestPage from './component/TestPage';
-import PostList from './component/PostList'
-import AppButton from './component/UI/button/AppButton';
-import AppInput from './component/UI/input/AppInput';
 import TestCard from './component/TestCard';
 import getUsersFromApi from './api/api'
 import Container from '@mui/material/Container';
 import {Grid} from '@mui/material';
 import './styles/App.css'
+import { authLogin, authMe } from './api/auth';
+import LoginPage from './component/LoginPage';
 
+function Appw() {
+    
+    useEffect(() => {
+        authLogin({
+            login: 'root',
+            password: '123'
+        }).then(async (res) => {
+            localStorage.setItem('token', res.result.token)
+            alert(JSON.stringify(await authMe()))
+
+        })
+    }, [])
+    return 'test'
+}
 
 function App() {
+    return (
+        <LoginPage/>
+    )
+}
 
-    const [posts, setPosts] = useState([getUsersFromApi()]);
-    // { id: 1, controllerName: 'Javascript', controllerRoute: 'Описание Маршрута', controllerId: 1 },
-    // { id: 2, controllerName: 'Python', controllerRoute: 'Описание Маршрута', controllerId: 2 },
-    // { id: 3, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 3 },
-    // { id: 4, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 4 },
-    // { id: 5, controllerName: 'Javascript', controllerRoute: 'Описание Маршрута', controllerId: 5 },
-    // { id: 6, controllerName: 'Python', controllerRoute: 'Описание Маршрута', controllerId: 6 },
-    // { id: 7, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 7 },
-    // { id: 8, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 8 },
-    // { id: 9, controllerName: 'Javascript', controllerRoute: 'Описание Маршрута', controllerId: 9 },
-    // { id: 10, controllerName: 'Python', controllerRoute: 'Описание Маршрута', controllerId: 10 },
-    // { id: 11, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 11 },
-    // { id: 12, controllerName: 'Lua', controllerRoute: 'Описание Маршрута', controllerId: 12 },
+function App2() {
 
     const [users, setUsers] = useState([]);
 
@@ -32,6 +37,7 @@ function App() {
     //     setUsers(await getUsersFromApi())
     // }
     useEffect(() => {
+       
         getUsersFromApi().then(setUsers)
     }, [])
 
@@ -53,11 +59,6 @@ function App() {
 
             </div>
             <TestPage />
-            {/* <form>
-                <AppInput onChange={e => setTitle(e.target.value)} value={title} placeholder="Название маршрута" />
-                <AppInput onChange={e => setBody(e.target.value)} value={body} placeholder="Исполнитель" />
-                <AppButton onClick={addNewRoute}>Создать маршрут</AppButton>
-            </form> */}
             <Container maxWidth="md">
                 <Grid container direction={"column"} spacing={2}>
                     {users.map((user) => (

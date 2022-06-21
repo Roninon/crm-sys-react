@@ -1,4 +1,5 @@
 {
+  "proxy": "http://10.83.97.219:5000",
   "name": "crm-sys-react",
   "version": "0.1.0",
   "private": true,
