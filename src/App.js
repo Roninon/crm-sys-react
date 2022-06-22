@@ -1,35 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import TestPage from './component/TestPage';
+import NavBar from './component/NavBar';
 import TestCard from './component/TestCard';
 import getUsersFromApi from './api/api'
 import Container from '@mui/material/Container';
 import {Grid} from '@mui/material';
 import './styles/App.css'
-import { authLogin, authMe } from './api/auth';
 import LoginPage from './component/LoginPage';
 
-function Appw() {
+
+
+
+function App2() {
     
-    useEffect(() => {
-        authLogin({
-            login: 'root',
-            password: '123'
-        }).then(async (res) => {
-            localStorage.setItem('token', res.result.token)
-            alert(JSON.stringify(await authMe()))
-
-        })
-    }, [])
-    return 'test'
-}
-
-function App() {
     return (
         <LoginPage/>
     )
 }
 
-function App2() {
+function App() {
 
     const [users, setUsers] = useState([]);
 
@@ -58,7 +46,7 @@ function App2() {
             <div className="empty-box">
 
             </div>
-            <TestPage />
+            <NavBar />
             <Container maxWidth="md">
                 <Grid container direction={"column"} spacing={2}>
                     {users.map((user) => (
