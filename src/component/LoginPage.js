@@ -3,6 +3,7 @@ import { Container } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { authLogin, authMe } from '../api/auth';
+import { Link } from 'react-router-dom';
 
 function makeEventSetter(setter) {
     return event => setter(event.target.value)
@@ -37,31 +38,31 @@ const LoginPage = () => {
                 console.log(res)
                 localStorage.setItem('token', res.result.token)
                 console.log(JSON.stringify(await authMe()))
-                
+
             } else if (res.problem) {
-                alert(res.problem)
+                console.log(res.problem)
             } else {
-                alert("wrong answer from server")
+                console.log("wrong answer from server")
             }
-            
-           
+
+
         })
     }
 
     useEffect(() => {
-        
+
     }, []);
 
 
     return (
         <div>
             <Container maxWidth="sm">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} sx={{ displat: "flex", justifyContent: "space-around" }}>
                     <Grid
                         container
                         direction="column"
                         justifyContent="center"
-                        sx={{ minHeight: "100vh" }}
+                        sx={{ minHeight: "100vh", maxWidth: "260px" }}
                     >
                         <Paper
                             elevation={2}
@@ -79,6 +80,7 @@ const LoginPage = () => {
                                         id="filled-basic"
                                         label="Логин"
                                         variant="outlined"
+                                        type="text"
                                         autoFocus
                                     />
                                 </Grid>
@@ -93,7 +95,9 @@ const LoginPage = () => {
                                     />
                                 </Grid>
                                 <Grid item>
-                                    <Button onClick={postAuth} type="submit" variant='outlined'>Войти</Button>
+                                    <Link to="/">
+                                        <Button onClick={postAuth} type="submit" variant='outlined'>Войти</Button>
+                                    </Link>
                                     <Tooltip title="Тестовая версия сайта" arrow>
                                         <Chip
                                             icon={<HelpOutlineIcon />}

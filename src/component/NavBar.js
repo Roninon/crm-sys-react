@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 const pages = ['Менеджеры', 'Базы данных'];
 const settings = ['Профиль', 'Настройки', 'Статистика', 'Выход'];
@@ -140,9 +141,11 @@ const ResponsiveAppBar = () => {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Открыть настройки">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt='FUCK' />
-                            </IconButton>
+                            <Link to="/login">
+                                <Button variant='text' sx={{ color: "white" }} >
+                                    Выйти
+                                </Button>
+                            </Link>
                         </Tooltip>
                         <Menu
                             sx={{ mt: '45px' }}
