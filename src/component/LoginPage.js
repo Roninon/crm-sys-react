@@ -38,6 +38,7 @@ const LoginPage = () => {
                 console.log(res)
                 localStorage.setItem('token', res.result.token)
                 console.log(JSON.stringify(await authMe()))
+                console.log(localStorage.getItem('token'))
 
             } else if (res.problem) {
                 console.log(res.problem)

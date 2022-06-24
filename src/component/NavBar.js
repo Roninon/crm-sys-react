@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import Logo from '../logo.png';
+import '../styles/App.css'
 
 const pages = ['Менеджеры', 'Базы данных'];
 const settings = ['Профиль', 'Настройки', 'Статистика', 'Выход'];
@@ -36,10 +38,13 @@ const ResponsiveAppBar = () => {
     };
 
     return (
-        <AppBar>
-            <Container maxWidth="md">
+        <AppBar sx={{ backgroundColor: "#283f9f" }}>
+            <Container maxWidth="2xl">
                 <Toolbar disableGutters>
-                    <Typography
+                    <Tooltip title='"Найкраща робота у світі!" - © Дон' enterDelay={2000} arrow>
+                        <img className="Logo" src={Logo} alt='"Найкраща робота у світі!" - © Дон' />
+                    </Tooltip>
+                    {/* <Typography
                         variant="h6"
                         noWrap
                         component="a"
@@ -55,7 +60,7 @@ const ResponsiveAppBar = () => {
                         }}
                     >
                         Главная
-                    </Typography>
+                    </Typography> */}
 
 
                     {/* 
@@ -132,7 +137,7 @@ const ResponsiveAppBar = () => {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, mx: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
                             </Button>
@@ -140,13 +145,11 @@ const ResponsiveAppBar = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Открыть настройки">
-                            <Link to="/login">
-                                <Button variant='text' sx={{ color: "white" }} >
-                                    Выйти
-                                </Button>
-                            </Link>
-                        </Tooltip>
+                        <Link to="/login">
+                            <Button variant='text' sx={{ color: "white" }} >
+                                Выйти
+                            </Button>
+                        </Link>
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"

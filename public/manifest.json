@@ -1,0 +1,15 @@
+{
+    "short_name": "Менеджер - CRM",
+    "name": "Менеджер - CRM",
+    "icons": [
+        {
+            "src": "../src/favicon.png",
+            "type": "image/png",
+            "sizes": "234x227"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}
