@@ -146,7 +146,7 @@ const ResponsiveAppBar = () => {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Link to="/login">
-                            <Button variant='text' sx={{ color: "white" }} >
+                            <Button sx={{ color: "white" }} >
                                 Выйти
                             </Button>
                         </Link>
