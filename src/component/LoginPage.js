@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { authLogin, authMe } from '../api/auth';
 import { Link } from 'react-router-dom';
+import '../styles/App.css';
 
 function makeEventSetter(setter) {
     return event => setter(event.target.value)
@@ -56,18 +57,17 @@ const LoginPage = () => {
 
 
     return (
-        <div>
-            <Container maxWidth="sm">
-                <form onSubmit={handleSubmit} sx={{ displat: "flex", justifyContent: "space-around" }}>
+        <form onSubmit={handleSubmit}>
+                <Container maxWidth="sm">
                     <Grid
                         container
                         direction="column"
                         justifyContent="center"
-                        sx={{ minHeight: "100vh", maxWidth: "260px" }}
+                        sx={{ minHeight: "100vh", maxWidth: "100%" }}
                     >
                         <Paper
                             elevation={2}
-                            sx={{ padding: "15px" }}
+                            sx={{ padding: "15px", margin: "0 160px" }}
                         >
                             <Grid
                                 container
@@ -76,6 +76,7 @@ const LoginPage = () => {
                             >
                                 <Grid item>
                                     <TextField
+                                        sx={{width: "100%"}}
                                         onChange={makeEventSetter(setUsername)}
                                         size='large'
                                         id="filled-basic"
@@ -87,6 +88,7 @@ const LoginPage = () => {
                                 </Grid>
                                 <Grid item>
                                     <TextField
+                                        sx={{width: "100%"}}
                                         size='large'
                                         id="filled-basi"
                                         label="Пароль"
@@ -110,9 +112,8 @@ const LoginPage = () => {
                             </Grid>
                         </Paper>
                     </Grid>
-                </form>
-            </Container>
-        </div>
+                </Container>
+        </form>
     );
 };
 
